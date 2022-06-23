@@ -1,0 +1,29 @@
+{% extends 'Base.html' %}
+{% block title %}Our Wine{% endblock %}
+
+{% block contect %}
+    {% if red_wine %}
+        <div class="ex3_container" id="redList">
+        <h2>Red Wines</h2>
+            {% for red, value in red_wine.items() %}
+                <h3>{{ red }}: {{ value | upper() }}</h3>
+            {% endfor %}
+    </div>
+    <div class="ex3_container" id="whiteList">
+    <br>
+        <h2>White Wines</h2>
+            {% for white , value in white_wine.items() %}
+                <h3>{{ white }}: {{ value | upper() }}</h3>
+            {% endfor %}
+    </div>
+    <div class="ex3_container" id="menu">
+    <br>
+        <h2>Menu</h2>
+            {% for food in food %}
+                <h3>{{ food | lower() }}</h3>
+            {% endfor %}
+    </div>
+    {% else %}
+        <h3>Try Again</h3>
+    {% endif %}
+{% endblock %}

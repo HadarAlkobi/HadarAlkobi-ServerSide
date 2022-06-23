@@ -1,0 +1,44 @@
+{% extends 'Base.html' %}
+{% block title %}Contact Us{% endblock %}
+{% block contect %}
+
+<body>
+    <div class="contactPageContainer">
+        <div id="formContainer">
+            <div id="contactContainer" class="header">
+                <h1 id="contactHeader" class="header">Contact Us!</h1>
+            </div>
+            <span class="form">Please leave your information, and we will contact you soon!</span><br><br>
+            <form action="#" method="get" class="form">
+                <label for="FullName">Full Name</label><br>
+                <input type="text" id="FullName" name="FullName" autocomplete="on" required><br>
+                <label for="Email">Email</label><br>
+                <input type="email" id="Email" name="Email" required><br>
+                <label for="PhoneNumber">Phone Number</label><br>
+                <input type="tel" id="PhoneNumber" name="PhoneNumber" minlength="9" maxlength="10" required><br><br>
+                <label for="timeOfContact">Preferred time to contact you</label> <br><br>
+                <input type="time" id="timeOfContact" name="timeOfContact" min="08:00" max="17:00"><br><br>
+                <label for="age">I'm above the age of 18</label>
+                <input type="checkbox" name="age" id="age" required><br><br>
+                <input class="formButton" type="submit" value="Submit"><br><br>
+            </form>
+        </div>
+        <div id="contactInformation"><br>
+            <h3>Our Information:</h3>
+            <i>BGU-Winery@gmail.com</i><br><br>
+            <i>tel: 052-1122334</i><br><br>
+        </div>
+        <div id="mediaRef">
+            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="../static/img/white2.jpg" alt="whitey" width="300px" height="322px">
+        </div>
+    <nav class="navs">
+        <div  id="SideBar" class="sidenav">
+            <a href="#">Events</a>
+            <a href="#">Menus</a>
+            <a href="#">Special Offers</a>
+            <a href="/assignment3_2">Join The Club</a>
+        </div>
+    </nav>
+</div>
+</body>
+{% endblock %}

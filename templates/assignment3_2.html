@@ -1,0 +1,36 @@
+{% extends 'Base.html' %}
+{% block title %}Join The Club{% endblock %}
+
+{% block contect %}
+    <div class="assignment3_2Container">
+    <div class="ex3_container" id="searchForm">
+        <form class="search" action="#" method="get">
+            <label id="search" for="search">Search:</label> <br>
+            <input id="search" type="text" name="search"> <br>
+            <button class="formButton" id="searchButton" type="submit">Search</button>
+        </form>
+    </div>
+
+    {% for user, data in users_results.items() %}
+        <h3><span class="user_details">User Name:</span> {{ data.name }},
+            <span class="user_details">Email:</span> {{ data.email }}</h3>
+    {% endfor %}
+
+    {% if session.login %}
+            <form class="logout" action="/log_out" method="post">
+                <button class="formButton" id="logoutButton" type="submit">Log Out</button>
+            </form>
+    {% else %}
+        <div class="ex3_container" id="regForm">
+            <form class="registration" action="" method="post">
+                <h3 id="join">JOIN THE CLUB</h3>
+                <label for="userName">User Name:</label> <br>
+                <input type="text" id="userName" name="userName" required><br>
+                <label for="email">Email:</label> <br>
+                <input type="email" id="email" name="email" required><br>
+                <button class="formButton" id="regButton" type="submit">registration</button>
+            </form>
+        </div>
+    {% endif %}
+    </div>
+{% endblock %}

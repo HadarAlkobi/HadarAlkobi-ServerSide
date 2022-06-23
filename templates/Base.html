@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include('styles.html') %}
+    {% include('js.html') %}
+    {% block Logo %}
+        <div id="container" class="header">
+            <img  alt="Logo" src="../static/img/newLogo.jpg" id="Logo">
+            <h1 id="pageHeader" class="header">BGU Winery</h1>
+        </div>
+    {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+
+</head>
+<body>
+    {% include('Nav.html') %}
+    {% if session.login %}
+        <h2>Welcome {{ session.username }}</h2>
+    {% else %}
+        <h2>Hello Guest</h2>
+    {% endif %}
+    {% block contect %}
+            <h1>Message from BASE Page!</h1>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% extends 'Base.html' %}
+{% block title %}BGU Winery{% endblock %}
+{% block Logo %}
+    {{ super() }}
+     <div id="est">Established 2022</div>
+{% endblock %}
+{% block contect %}
+
+<body>
+<div class="homePageContainer">
+    <div id="welcomeContainer">
+      <h1 id="welcoming" class="important">Welcome to our fine winery!</h1>
+      <p id="warning" class="open">Please keep in mind the winery is for adults above the age of 18 only</p>
+      <p id="gritting" class="open">We can't wait to see you soon!</p>
+    </div>
+
+    <img id="picture1" src="../static/img/white4.jpg" alt="white">
+    <img id="picture2" onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="../static/img/red_wine.jpg" alt="red">
+
+    <nav class="navs">
+        <div  id="SideBar" class="sidenav">
+            <a href="#">Events</a>
+            <a href="#">Menus</a>
+            <a href="#">Special Offers</a>
+            <a href="/assignment3_2">Join The Club</a>
+        </div>
+    </nav>
+</div>
+
+</body>
+{% endblock %}
+
