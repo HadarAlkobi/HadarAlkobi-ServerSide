@@ -16,6 +16,8 @@
             <span class="user_details">Email:</span> {{ data.email }}</h3>
     {% endfor %}
 
+    <h2>{{ message }}</h2>
+
     {% if session.login %}
             <form class="logout" action="/log_out" method="post">
                 <button class="formButton" id="logoutButton" type="submit">Log Out</button>
@@ -28,9 +30,12 @@
                 <input type="text" id="userName" name="userName" required><br>
                 <label for="email">Email:</label> <br>
                 <input type="email" id="email" name="email" required><br>
+                <label for="password">Password:</label> <br>
+                <input type="password" id="password" name="password" required><br>
                 <button class="formButton" id="regButton" type="submit">registration</button>
             </form>
         </div>
     {% endif %}
+
     </div>
 {% endblock %}

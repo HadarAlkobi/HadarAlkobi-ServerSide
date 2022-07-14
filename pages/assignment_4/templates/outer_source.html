@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %} Outer Source {% endblock %}
+
+{% block contect %}
+    <div class="outerForm">
+        <h3>Show User (Frontend):</h3>
+        <form action="/outer_source" target="frame" id="frontForm" method="POST">
+            <label for="frontID" class="outerLabel">Enter ID:</label><br>
+            <input type="text" class="frontForm" id="frontID" name="frontID" required><br>
+            <button class="formButton" onclick="request_user()" type="button">Submit</button>
+        </form>
+    </div>
+    <div class="center">
+        <p id="userdata"></p>
+    </div>
+
+    <div class="outerForm">
+        <h3>Show User (Backend):</h3>
+        <form action="/outer_source" target="frame" id="BackForm" method="POST">
+            <label for="backID" class="outerLabel">Enter ID:</label><br>
+            <input type="text" class="BackForm" id="backID" name="backID" required><br>
+            <input type="submit" class="formButton" form="BackForm" value="Submit"/><br>
+        </form>
+        <br>
+
+    </div>
+    <div class="center">
+        {{ session['user_data'] }}
+    </div>
+{% endblock %}
+

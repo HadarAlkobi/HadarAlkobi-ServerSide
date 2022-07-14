@@ -1,0 +1,60 @@
+{% extends 'Base.html' %}
+{% block title %}assignment 4{% endblock %}
+
+{% block contect %}
+
+    <h3> {{ message_for_insert }} </h3>
+
+    <div class="ex3_container" id="regForm">
+        <form class="registration" action="/insert_user" method="post">
+            <h3 id="join">JOIN THE CLUB</h3>
+            <label for="user-name">Username:</label> <br>
+            <input type="text" id="user-name" name="user-name" required><br>
+            <label for="user-email">Email:</label> <br>
+            <input type="email" id="user-email" name="user-email" required><br>
+            <label for="user-password">Password:</label> <br>
+            <input type="password" id="user-password" name="user-password" required><br>
+            <button class="formButton" id="regButton" type="submit">Registration</button>
+        </form>
+    </div>
+
+    <h3>{{ message_for_delete }}</h3>
+
+    <div class="ex4_container">
+        <form action="/delete_user" method="post">
+            <h3>Delete My User</h3>
+            <label for="user-email-delete">Insert Email To Remove:</label><br>
+            <input id="user-email-delete" type="email" name="user-email-delete" required><br>
+            <button class="formButton" id="deleteButton" type="submit">Remove</button>
+      </form>
+    </div>
+
+    <h3>{{ message_for_user }}</h3>
+
+    <div class="ex4_container">
+        <form action="/update_user" method="post">
+            <h3>Update My Info Please</h3>
+            <label for="user-email">Insert Your Current Email:</label> <br>
+            <input id="user-email" type="email" name="user-email" required> <br>
+            <label for="user-name-update">Updated Username:</label> <br>
+            <input id="user-name-update" type="text" name="user-name-update"> <br>
+            <label for="user-password-update">Updated Password:</label> <br>
+            <input id="user-password-update" type="password" name="user-password-update"> <br>
+            <button class="formButton" id="updateButton" type="submit">Update</button>
+        </form>
+    </div>
+
+    <div class="ex4_container">
+        <form action="/select-users" method="get">
+            <h3>Show Registered Users List:</h3>
+            <button class="formButton" id="listButton" type="submit">Show List</button>
+        </form>
+    </div>
+
+    {% for user in users %}
+        <div>
+            <h3><span class="user_details">Username:</span> {{ user.name }},
+                <span class="user_details">Email:</span>{{ user.email }}</h3>
+        </div>
+    {% endfor %}
+{% endblock %}

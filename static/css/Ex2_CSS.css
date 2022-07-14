@@ -237,12 +237,12 @@ body{
 
 #regForm{
   color: black;
-  font-size: 30px;
+  font-size: 22px;
   grid-area: regForm;
 }
 #searchForm{
   color: black;
-  font-size: 30px;
+  font-size: 22px;
   grid-area: searchForm;
 }
 .formButton{
@@ -260,4 +260,33 @@ input{
   height: 22px;
   width: 200px;
   border-radius: 8px;
+}
+.ex4_container{
+    color: black;
+    height: fit-content;
+    width: max-content;
+    padding: 20px;
+    margin: 7px auto;
+    border: black solid 2px;
+    border-radius: 15px;
+    font-size: 22px;
+}
+label{
+  margin: 90px;
+}
+
+/*------------- Assignment_4 --------------*/
+/*------------- Outer Source --------------*/
+.outerForm{
+  padding: 5px;
+  margin: auto;
+  border: black solid 2px;
+  border-radius: 10px;
+  width: max-content;
+  justify-content: center;
+}
+.outerLabel{
+  font-size: 18px;
+  padding: 10px;
+  margin-bottom:20px;
 }
